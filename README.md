@@ -1,5 +1,9 @@
 # CV – LaTeX Build
 
+```bash
+git clone https://github.com/mgiurato/two-pages-cv.git
+```
+
 ## Prerequisites
 
 Install a LaTeX distribution with `xelatex` and `biber` available in your PATH:

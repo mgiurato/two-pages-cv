@@ -2,10 +2,10 @@
 
 \PassOptionsToPackage{style=ieee,sorting=ydnt,uniquename=init,defernumbers=true}{biblatex}
 
-\usepackage{settings}
+\usepackage{src/settings}
 \DefineBibliographyStrings{english}{url={\textsc{url}}}
-\addbibresource{journals.bib}
-\addbibresource{conferences.bib}
+\addbibresource{src/journals.bib}
+\addbibresource{src/conferences.bib}
 \mynames{Giurato/M.}
 
 \newcommand\blfootnote[1]{%
@@ -19,18 +19,18 @@
 
 % Change the fonts if you want
 \ifxetexorluatex % If you're using XeLaTeX or LuaLaTeX
-  \usepackage{fontspec} 
+  \usepackage{fontspec}
   %% You can use \setmainfont etc; I'm just using these font packages here because they provide OpenType fonts for use by XeLaTeX/LuaLaTeX anyway
   \usepackage[p,osf,swashQ]{cochineal}
   \usepackage[medium,bold]{cabin}
   \usepackage[varqu,varl,scale=0.9]{zi4}
-  \usepackage{academicons}
 \else % If you're using pdfLaTeX or latex
   \usepackage[T1]{fontenc}
   \usepackage[p,osf,swashQ]{cochineal}
   \usepackage{cabin}
   \usepackage[varqu,varl,scale=0.9]{zi4}
 \fi
+\usepackage{src/academicons}
 
 % Change the page margins if you want
 \geometry{left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm}
@@ -58,7 +58,7 @@
 
 \rightheader{~}
 \begin{fullonly}
-\photo[r]{avatar}
+\photo[r]{assets/avatar}
 \photoscale{0.19}
 \end{fullonly}
 
@@ -66,14 +66,14 @@
 
 \begin{document}
 \makeheaders[c]
-\makerubric{employment}
-\makerubric{education}
-\makerubric{certifications}
-\makerubric{skills}
+\makerubric{src/employment}
+\makerubric{src/education}
+\makerubric{src/certifications}
+\makerubric{src/skills}
 
 \clearpage
-\makerubric{misc}
-\input{publications}
-\blfootnote{\input{gdpr}}
+\makerubric{src/misc}
+\input{src/publications}
+\blfootnote{\input{src/gdpr}}
 
 \end{document}

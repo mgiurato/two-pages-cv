@@ -1,0 +1,27 @@
+% Patched version of academicons.sty
+% Upstream: 2025/09/20 v1.9.6-2 Academicons Icons
+%
+% MiKTeX's HarfBuzz shaper does not resolve PUA glyphs from the system
+% academicons font. Workaround: load the font by explicit local path so
+% XeTeX bypasses name resolution, and use \char instead of \symbol for
+% direct Unicode codepoint access.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{academicons}[2025/09/20 v1.9.6-2 Academicons Icons]
+
+\RequirePackage{iftex}
+\RequirePackage{fontspec}
+
+\newfontfamily\ai@font{academicons.otf}[
+  Path = assets/,
+  Renderer = Basic
+]
+
+\DeclareRobustCommand\ai@icon[1]{{\ai@font#1}}
+
+\input{academicons-xeluatex.tex}
+
+\newcommand*{\aiicon}[1]{\ai@icon{\csname aiicon@#1\endcsname}}
+\input{academicons-generic.tex}
+
+\endinput

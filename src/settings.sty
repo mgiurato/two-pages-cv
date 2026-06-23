@@ -28,7 +28,11 @@
 \RequirePackage{babel}
 \raggedright
 
-\RequirePackage[fixed]{fontawesome5}
+\ifxetexorluatex
+  \RequirePackage{fontawesome5}
+\else
+  \RequirePackage[fixed]{fontawesome5}
+\fi
 
 \newcommand{\smallcaps}[1]{\textsc{\lowercase{#1}}}
 
