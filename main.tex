@@ -1,0 +1,79 @@
+\documentclass[a4paper,skipsamekey,11pt,english]{curve}
+
+\PassOptionsToPackage{style=ieee,sorting=ydnt,uniquename=init,defernumbers=true}{biblatex}
+
+\usepackage{settings}
+\DefineBibliographyStrings{english}{url={\textsc{url}}}
+\addbibresource{journals.bib}
+\addbibresource{conferences.bib}
+\mynames{Giurato/M.}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\usepackage{calc}
+
+% Change the fonts if you want
+\ifxetexorluatex % If you're using XeLaTeX or LuaLaTeX
+  \usepackage{fontspec} 
+  %% You can use \setmainfont etc; I'm just using these font packages here because they provide OpenType fonts for use by XeLaTeX/LuaLaTeX anyway
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage[medium,bold]{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+  \usepackage{academicons}
+\else % If you're using pdfLaTeX or latex
+  \usepackage[T1]{fontenc}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+
+% Change the page margins if you want
+\geometry{left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm}
+
+\includecomment{fullonly}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftheader{%
+  {\LARGE\bfseries\sffamily Mattia Giurato, Ph.D.}
+
+  \makefield{\faEnvelope[regular]}{\href{mailto:mattia.giurato@gmail.com}{\texttt{mattia.giurato@gmail.com}}}
+  \makefield{\faPhone}{+39 340 640 2959}
+  \makefield{\faLinkedin}{\href{https://www.linkedin.com/in/mattiagiurato/}{\texttt{LinkedIn}}}
+  
+  \makefield{\faGithub}{\href{https://github.com/mgiurato}{\texttt{GitHub}}}
+  \makefield{\faGitlab}{\href{https://gitlab.com/mgiurato}{\texttt{GitLab}}}
+  \makefield{\faGlobe}{\url{https://mgiurato.eu/}}
+  
+  \makefield{\faResearchgate}{\href{https://www.researchgate.net/profile/Mattia-Giurato}{\texttt{ResearchGate}}}
+  \makefield{\aiGoogleScholar}{\href{https://scholar.google.it/citations?user=8MKo4S0AAAAJ&hl=it&oi=ao}{\texttt{Google Scholar}}}
+  \makefield{\aiScopus}{\href{http://www.scopus.com/inward/authorDetails.url?authorID=57191854768&partnerID=MN8TOARS}{\texttt{Scopus}}}
+  \makefield{\aiDoi}{\href{https://orcid.org/0000-0001-8476-4195}{\texttt{ORCID}}}
+}
+
+\rightheader{~}
+\begin{fullonly}
+\photo[r]{avatar}
+\photoscale{0.19}
+\end{fullonly}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+\makeheaders[c]
+\makerubric{employment}
+\makerubric{education}
+\makerubric{certifications}
+\makerubric{skills}
+
+\clearpage
+\makerubric{misc}
+\input{publications}
+\blfootnote{\input{gdpr}}
+
+\end{document}

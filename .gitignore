@@ -1,0 +1,5 @@
+# LaTeX temporary files
+build/
+
+# Output PDF (remove this line if you want to track the PDF)
+main.pdf
